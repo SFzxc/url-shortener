@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  database:
+    image: postgres:12.1
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  redis:
+    image: 'redis:4.0-alpine'
+    command: redis-server --requirepass yourpassword
+    volumes:
+      - 'redis:/data'
+
+  website:
+    depends_on:
+      - 'database'
+      - 'redis'
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/app'
+    env_file:
+      - '.env'
+    environment:
+      DATABASE_HOST: database
+      REDIS_HOST: redis
+      DATABASE_USER: username
+
+volumes:
+  redis:
+  db_data:
