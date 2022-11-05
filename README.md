@@ -9,7 +9,7 @@ ShortLink is a URL shortening service where you enter a URL such as https://code
 ### [Solutions](/docs/solutions.md)
 
 ### System Architecture
-![System Architecture](/docs/image/system_architecture.png)
+![System Architecture](docs/images/system_architecture.png)
 
 ### [Setup](/docs/setup.md)
 
