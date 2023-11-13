@@ -1,7 +1,3 @@
-### Objective
-
-Your assignment is to implement a URL shortening service using Ruby. You can use any framework you want (or no framework at all, it is up to you).
-
 ### Brief
 
 ShortLink is a URL shortening service where you enter a URL such as https://codesubmit.io/library/react and it returns a short URL such as http://short.est/GeAi9K.
